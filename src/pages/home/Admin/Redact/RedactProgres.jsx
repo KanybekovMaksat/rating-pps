@@ -10,7 +10,7 @@ function RadactProgres() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`https://api.pps.makalabox.com/api/admin/stage/edit/award/title`);
+        const resp = await axios.get(`http://api.pps.makalabox.com/api/admin/stage/edit/award/title`);
         const data = resp.data.titles;
         setTitles(data)
       } catch (error) {

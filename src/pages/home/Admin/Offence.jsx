@@ -9,7 +9,7 @@ function Offence() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("https://api.pps.makalabox.com/api/admin/offence");
+      const response = await axios.get("http://api.pps.makalabox.com/api/admin/offence");
       setUsers(response.data.offence);
       setOpenStates(new Array(response.data.offence.length).fill(false)); // Создаем массив с длиной, равной количеству пользователей, и заполняем его false
     } catch (error) {
@@ -57,7 +57,7 @@ function Offence() {
           formattedData.offence[`${+userId}_${optionId}`] = { userId: +userId, id: optionId, quantity };
         }
       }
-      const response = await axios.post("https://api.pps.makalabox.com/api/admin/offence/add", formattedData);
+      const response = await axios.post("http://api.pps.makalabox.com/api/admin/offence/add", formattedData);
       setSelectedOptions({});
       console.log(response.data);
     } catch (error) {

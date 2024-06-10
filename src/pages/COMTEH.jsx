@@ -11,7 +11,7 @@ function Comteh() {
   useEffect(() => {
     const getInst = async () => {
       try {
-        const response = await axios.get('https://api.pps.makalabox.com/api/rating/comtehno/departments');
+        const response = await axios.get('http://api.pps.makalabox.com/api/rating/comtehno/departments');
         const data = response.data.institutions;
         setInst(data);
         setFilteredInst(data);

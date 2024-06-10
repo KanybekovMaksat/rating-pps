@@ -10,7 +10,7 @@ function RedactEducationId() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`https://api.pps.makalabox.com/api/user/account/award/get/${id}`);
+        const resp = await axios.get(`http://api.pps.makalabox.com/api/user/account/award/get/${id}`);
         const data = resp.data.titles;
         setTitles(data);
       } catch (error) {

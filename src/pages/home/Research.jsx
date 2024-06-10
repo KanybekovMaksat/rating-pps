@@ -57,7 +57,7 @@ const Research = () => {
       });
 
       const response = await axios.post(
-        "https://api.pps.makalabox.com/api/user/research/add",
+        "http://api.pps.makalabox.com/api/user/research/add",
         { ural: researchData },
         {
           headers: {
@@ -75,7 +75,7 @@ const Research = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("https://api.pps.makalabox.com/api/user/research", {
+      const response = await axios.get("http://api.pps.makalabox.com/api/user/research", {
         headers: {
           Authorization: `Bearer ${token}`
         }

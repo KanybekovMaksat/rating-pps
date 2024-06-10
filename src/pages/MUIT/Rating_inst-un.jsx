@@ -11,7 +11,7 @@ function Rating_inst_un() {
   useEffect(() => {
     const getInst = async () => {
       try {
-        const response = await axios.get('https://api.pps.makalabox.com/api/rating/institutes');
+        const response = await axios.get('http://api.pps.makalabox.com/api/rating/institutes');
         const data = response.data.institutions;
         setInst(data);
         setFilteredInst(data);

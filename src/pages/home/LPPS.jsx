@@ -9,7 +9,7 @@ function Lpps() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("https://api.pps.makalabox.com/api/rating/users");
+      const response = await axios.get("http://api.pps.makalabox.com/api/rating/users");
       const data = response.data.users;
       setUsers(data);
     } catch (error) {
@@ -55,7 +55,7 @@ function Lpps() {
                 backgroundColor: i % 2 === 0 ? "#0047FF4D" : "#33FF001A",
               }}
             >
-              <Link to={`http://localhost:5173/user/${user.id}`}>{user.name}</Link>
+              <Link to={`/user/${user.id}`}>{user.name}</Link>
             </div>
           ))}
         </div>

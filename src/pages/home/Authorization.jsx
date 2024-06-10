@@ -13,7 +13,7 @@ function Authorization() {
 
   const handleLogin = useCallback((e) => {
     e.preventDefault();
-    axios.post('https://api.pps.makalabox.com/api/login', {
+    axios.post('http://api.pps.makalabox.com/api/login', {
       "username": name,
       "password": password,
     })
