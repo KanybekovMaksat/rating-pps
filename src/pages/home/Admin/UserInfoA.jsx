@@ -13,7 +13,7 @@ function UserInfoA() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const resp = await axios.get(`http://localhost:8092/api/user/account/${id}`, {
+        const resp = await axios.get(`https://api.pps.makalabox.com/api/user/account/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           }
@@ -42,7 +42,7 @@ function UserInfoA() {
     try {
       const idBag = selectedItems.map(itemId => ({ id: itemId }));
       const requestData = { "idBag": idBag };
-      await axios.put(`http://localhost:8092/api/admin/${selectedStage}/freeze`, requestData);
+      await axios.put(`https://api.pps.makalabox.com/api/admin/${selectedStage}/freeze`, requestData);
       location.reload();
     } catch (error) {
       console.log(error);
@@ -53,7 +53,7 @@ function UserInfoA() {
     try {
       const idBag = selectedItems.map(itemId => ({ id: itemId }));
       const requestData = { "idBag": idBag };
-      await axios.put(`http://localhost:8092/api/admin/${selectedStage}/active`, requestData);
+      await axios.put(`https://api.pps.makalabox.com/api/admin/${selectedStage}/active`, requestData);
       location.reload();
     } catch (error) {
       console.log(error);

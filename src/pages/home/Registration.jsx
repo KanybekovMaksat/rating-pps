@@ -11,7 +11,7 @@ function Registration() {
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
-    axios.post('http://localhost:8092/pps/sign-up', {
+    axios.post('https://api.pps.makalabox.com/pps/sign-up', {
       "username": name,
       "password": password,
     })

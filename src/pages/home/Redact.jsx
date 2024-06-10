@@ -14,7 +14,7 @@ const Redact = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const resp = await axios.get(`http://localhost:8092/api/user/account/${id}`, {
+        const resp = await axios.get(`https://api.pps.makalabox.com/api/user/account/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           }
@@ -54,7 +54,7 @@ const Redact = () => {
           stage: item.stage
         };
       });
-      await axios.put(`http://localhost:8092/api/user/account/award/edit`, { bag }, {
+      await axios.put(`https://api.pps.makalabox.com/api/user/account/award/edit`, { bag }, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -11,7 +11,7 @@ function Rating_pps() {
   useEffect(() => {
     const userInfo = async () => {
       try {
-        const resp = await axios.get('http://localhost:8092/api/rating/pps');
+        const resp = await axios.get('https://api.pps.makalabox.com/api/rating/pps');
         const sortedData = Object.values(resp.data.pps).sort((a, b) => b.sum - a.sum);
         setUserData(sortedData);
         console.log(sortedData);

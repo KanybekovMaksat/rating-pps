@@ -12,7 +12,7 @@ function Kite() {
   useEffect(() => {
     const getInst = async () => {
       try {
-        const response = await axios.get('http://localhost:8092/api/rating/itec/departments');
+        const response = await axios.get('https://api.pps.makalabox.com/api/rating/itec/departments');
         const data = response.data.institutions;
         setInst(data);
         setFilteredInst(data);

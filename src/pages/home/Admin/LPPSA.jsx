@@ -9,7 +9,7 @@ function Lppsa() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:8092/api/rating/users");
+      const response = await axios.get("https://api.pps.makalabox.com/api/rating/users");
       const data = response.data.users;
       setUsers(data);
     } catch (error) {
