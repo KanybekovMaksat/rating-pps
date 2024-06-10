@@ -62,7 +62,7 @@ function Rating_pps() {
             {userData.map((data) => (
               <tr key={data.id}>
                 <td>{data.id}</td>
-                <td><Link to={`http://localhost:5173/user/${data.id}`}>{data.name}</Link></td>
+                <td><Link to={`/user/${data.id}`}>{data.name}</Link></td>
                 <td>{data.institute}</td>
                 <td>{data.awardPoints}</td>
                 <td>{data.researchPoints}</td>
