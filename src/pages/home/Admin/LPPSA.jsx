@@ -55,7 +55,7 @@ function Lppsa() {
                 backgroundColor: i % 2 === 0 ? "#0047FF4D" : "#33FF001A",
               }}
             >
-              <Link to={`http://localhost:5173/user/admin/${user.id}`}>{user.name}</Link>
+              <Link to={`/user/admin/${user.id}`}>{user.name}</Link>
             </div>
           ))}
         </div>
