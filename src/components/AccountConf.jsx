@@ -12,7 +12,7 @@ const AccountConf = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const response = await axios.get('http://api.pps.makalabox.com/api/user/name', {
+        const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -26,7 +26,7 @@ const AccountConf = () => {
 
     const getUserId = async () => {
       try {
-        const response = await axios.get('http://api.pps.makalabox.com/api/user/id', {
+        const response = await axios.get('https://api.pps.makalabox.com/api/user/id', {
           headers: {
             Authorization: `Bearer ${token}`
           }

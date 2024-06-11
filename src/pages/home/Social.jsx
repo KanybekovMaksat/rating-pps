@@ -57,7 +57,7 @@ const Social = () => {
       });
 
       const response = await axios.post(
-        "http://api.pps.makalabox.com/api/user/social/add",
+        "https://api.pps.makalabox.com/api/user/social/add",
         { socials: socialsData },
         {
           headers: {
@@ -75,7 +75,7 @@ const Social = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("http://api.pps.makalabox.com/api/user/social", {
+      const response = await axios.get("https://api.pps.makalabox.com/api/user/social", {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -10,7 +10,7 @@ function RedactEducation() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`http://api.pps.makalabox.com/api/admin/stage/edit/innovative/title`);
+        const resp = await axios.get(`https://api.pps.makalabox.com/api/admin/stage/edit/innovative/title`);
         const data = resp.data.titles;
         setTitles(data);
       } catch (error) {

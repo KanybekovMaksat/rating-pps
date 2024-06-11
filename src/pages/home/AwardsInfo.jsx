@@ -14,7 +14,7 @@ function AwardsInfo() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const resp = await axios.get(`http://api.pps.makalabox.com/api/user/account/${id}`, {
+        const resp = await axios.get(`https://api.pps.makalabox.com/api/user/account/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           }
@@ -46,7 +46,7 @@ function AwardsInfo() {
         const idBag = [{ id: selectedItems[i] }];
         const stage = selectedStages[i];
         const requestData = { "idBag": idBag };
-        await axios.put(`http://api.pps.makalabox.com/api/user/${stage}/freeze`, requestData, {
+        await axios.put(`https://api.pps.makalabox.com/api/user/${stage}/freeze`, requestData, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -64,7 +64,7 @@ function AwardsInfo() {
         const idBag = [{ id: selectedItems[i] }];
         const stage = selectedStages[i];
         const requestData = { "idBag": idBag };
-        await axios.put(`http://api.pps.makalabox.com/api/user/${stage}/active`, requestData, {
+        await axios.put(`https://api.pps.makalabox.com/api/user/${stage}/active`, requestData, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -83,7 +83,7 @@ function AwardsInfo() {
         const stage = selectedStages[i];
         const requestData = { "idBag": idBag };
         console.log(requestData);
-        await axios.delete(`http://api.pps.makalabox.com/api/user/account/${stage}/delete`, {
+        await axios.delete(`https://api.pps.makalabox.com/api/user/account/${stage}/delete`, {
           headers: {
             Authorization: `Bearer ${token}`
           },

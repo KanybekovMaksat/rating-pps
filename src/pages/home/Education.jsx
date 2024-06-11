@@ -57,7 +57,7 @@ const Education = () => {
       });
 
       const response = await axios.post(
-        "http://api.pps.makalabox.com/api/user/education/add",
+        "https://api.pps.makalabox.com/api/user/education/add",
         { educations: educationsData },
         {
           headers: {
@@ -75,7 +75,7 @@ const Education = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get("http://api.pps.makalabox.com/api/user/education", {
+      const response = await axios.get("https://api.pps.makalabox.com/api/user/education", {
         headers: {
           Authorization: `Bearer ${token}`
         }

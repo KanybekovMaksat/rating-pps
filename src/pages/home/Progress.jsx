@@ -29,7 +29,7 @@ function Prodress() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await axios.get('http://api.pps.makalabox.com/api/user/progress', {
+      const response = await axios.get('https://api.pps.makalabox.com/api/user/progress', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -67,7 +67,7 @@ function Prodress() {
     });
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://api.pps.makalabox.com/api/user/progress/add', { awards }, {
+      await axios.post('https://api.pps.makalabox.com/api/user/progress/add', { awards }, {
         headers: {
           Authorization: `Bearer ${token}`
         }

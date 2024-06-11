@@ -26,7 +26,7 @@ function PrivateOffice() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResponse = await axios.get('http://api.pps.makalabox.com/api/user/name', {
+        const userResponse = await axios.get('https://api.pps.makalabox.com/api/user/name', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -34,7 +34,7 @@ function PrivateOffice() {
         setUserData(userResponse.data.user);
         setIsAuthenticated(true);
 
-        const infoResponse = await axios.get('http://api.pps.makalabox.com/api/user/info', {
+        const infoResponse = await axios.get('https://api.pps.makalabox.com/api/user/info', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -83,7 +83,7 @@ function PrivateOffice() {
       email,
     };
 
-    axios.post('http://api.pps.makalabox.com/api/user/info/add', dataToSend, {
+    axios.post('https://api.pps.makalabox.com/api/user/info/add', dataToSend, {
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
