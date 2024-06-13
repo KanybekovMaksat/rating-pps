@@ -11,7 +11,7 @@ function Rating_inst_unc() {
   useEffect(() => {
     const getInst = async () => {
       try {
-        const response = await axios.get('https://api.pps.makalabox.com/api/rating/institutes');
+        const response = await axios.get('https://api.pps.makalabox.com/api/rating/comtehno/departments');
         const data = response.data.institutions;
         setInst(data);
         setFilteredInst(data);
@@ -45,7 +45,7 @@ function Rating_inst_unc() {
         <table className="table">
           <thead>
             <tr>
-              <th className="un_l">Институты МУИТ</th>
+              <th className="un_l">Отделения КОМТЕХНО</th>
               <th className="sorter un_l" onClick={() => sortData('middlePoints')}>Средний балл ППС</th>
               <th className="sorter un_l" onClick={() => sortData('sum')}>Итого</th>
             </tr>

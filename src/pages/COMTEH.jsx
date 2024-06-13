@@ -16,7 +16,7 @@ function Comteh() {
         <div className="table__links Edu__text-S">
           <ul>
             <li><Link className="Link" to="/COMTEH/rating_pps">РЕЙТИНГ ППС</Link></li>
-            <li><Link className="Link" to="/COMTEH/rating_inst">РЕЙТИНГ ИНСТИТУТОВ</Link></li>
+            <li><Link className="Link" to="/COMTEH/rating_inst">РЕЙТИНГ ОТДЕЛЕНИЙ</Link></li>
           </ul>
         </div>
         <BackButton />

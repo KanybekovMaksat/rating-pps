@@ -16,7 +16,7 @@ function Kite() {
         <div className="table__links Edu__text-S">
           <ul>
             <li><Link className="Link" to="/KITE/rating_pps">РЕЙТИНГ ППС</Link></li>
-            <li><Link className="Link" to="/KITE/rating_inst">РЕЙТИНГ ИНСТИТУТОВ</Link></li>
+            <li><Link className="Link" to="/KITE/rating_inst">РЕЙТИНГ ОТДЕЛЕНИЙ</Link></li>
           </ul>
         </div>
         <BackButton />
