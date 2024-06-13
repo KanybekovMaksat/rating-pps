@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Rating_pps() {
+function Rating_ppsk() {
   const [userData, setUserData] = useState([]);
   const [sortedField, setSortedField] = useState('sum');
 
   useEffect(() => {
     const userInfo = async () => {
       try {
-        const resp = await axios.get('https://api.pps.makalabox.com/api/rating/pps');
+        const resp = await axios.get('https://api.pps.makalabox.com/api/rating/itec/pps');
         const sortedData = Object.values(resp.data.pps).sort((a, b) => b.sum - a.sum);
         setUserData(sortedData);
         console.log(sortedData);
@@ -79,4 +79,4 @@ function Rating_pps() {
   )
 }
 
-export default Rating_pps
+export default Rating_ppsk

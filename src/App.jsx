@@ -13,14 +13,14 @@ import Registration from './pages/home/Registration';
 import Questionnaire from './pages/home/Questionnaire';
 import PrivateOffice from './pages/home/PrivateOffice';
 import Muit from './pages/MUIT';
-import Rating_pps from './pages/MUIT/Rating_pps';
-import Rating_inst_un from './pages/MUIT/Rating_inst-un';
+import Rating_ppsm from './pages/MUIT/Rating_ppsm';
+import Rating_inst_unm from './pages/MUIT/Rating_inst-unm';
 import Comteh from './pages/COMTEH';
-import Ivtd from './pages/COMTEH/IVTD';
-import Eubd from './pages/COMTEH/EUBD';
+import Rating_ppsc from './pages/COMTEH/Rating_ppsc';
+import Rating_inst_unc from './pages/COMTEH/Rating_inst-unc';
 import Kite from './pages/KITE';
-import GiED from './pages/KITE/GiED';
-import EiTD from './pages/KITE/EiTD';
+import Rating_ppsk from './pages/KITE/Rating_ppsk';
+import Rating_inst_unk from './pages/KITE/Rating_inst-unk';
 import Progress from './pages/home/Progress';
 import Research from './pages/home/Research';
 import Education from './pages/home/Education';
@@ -116,14 +116,14 @@ function App() {
         <Route path='/Questionnaire' element={<Questionnaire />} />
         <Route path='/user/:id' element={<UserInfo />} />
         <Route path='/MUIT' element={<Muit />} />
-        <Route path='/MUIT/rating_pps-un' element={<Rating_pps />} />
-        <Route path='/MUIT/rating_inst-un' element={<Rating_inst_un />} />
+        <Route path='/MUIT/rating_pps' element={<Rating_ppsm />} />
+        <Route path='/MUIT/rating_inst' element={<Rating_inst_unm />} />
         <Route path='/COMTEH' element={<Comteh />} />
-        <Route path='/COMTEH/IVTD' element={<Ivtd />} />
-        <Route path='/COMTEH/EUBD' element={<Eubd />} />
+        <Route path='/COMTEH/rating_pps' element={<Rating_ppsc />} />
+        <Route path='/COMTEH/rating_inst' element={<Rating_inst_unc />} />
         <Route path='/KITE' element={<Kite />} />
-        <Route path='/KITE/GiED' element={<GiED />} />
-        <Route path='/KITE/EiTD' element={<EiTD />} />
+        <Route path='/KITE/rating_pps' element={<Rating_ppsk />} />
+        <Route path='/KITE/rating_inst' element={<Rating_inst_unk />} />
         <Route path='*' element={<PageNotFound />} />
         {renderRoutesForRole()}
       </Routes>

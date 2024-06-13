@@ -1,39 +1,8 @@
-import NavBar from "../components/NavBar"
 import BackButton from "../components/Back"
+import NavBar from "../components/NavBar"
 import { Link } from "react-router-dom"
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 function Kite() {
-  const [inst, setInst] = useState([]);
-  const [sortedField, setSortedField] = useState('sum');
-  const [filteredInst, setFilteredInst] = useState([]);
-
-  useEffect(() => {
-    const getInst = async () => {
-      try {
-        const response = await axios.get('https://api.pps.makalabox.com/api/rating/itec/departments');
-        const data = response.data.institutions;
-        setInst(data);
-        setFilteredInst(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getInst();
-  }, []);
-
-  useEffect(() => {
-    sortData(sortedField);
-  }, [sortedField]);
-
-  const sortData = (field) => {
-    const sortedData = [...filteredInst].sort((a, b) => b[field] - a[field]);
-    setFilteredInst(sortedData);
-    setSortedField(field);
-  };
-
   return (
     <div className="сontents">
       <div className="header">
@@ -44,24 +13,12 @@ function Kite() {
           <div className="Kite__logo"></div>
           <div className="Edu__text-M Kite__name">Колледж инновационных технологий и экономики</div>
         </div>
-        <table className="table">
-          <thead>
-            <tr>
-              <th className="un_l">Бишкекский колледж компьютерных систем и технологий</th>
-              <th className="sorter un_l" onClick={() => sortData('middlePoints')}>Средний балл ППС</th>
-              <th className="sorter un_l" onClick={() => sortData('sum')}>Итого</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredInst.map((institution, i) => (
-              <tr key={i}>
-                <td>{institution.name}</td>
-                <td>{institution.middlePoints}</td>
-                <td>{institution.sum}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="table__links Edu__text-S">
+          <ul>
+            <li><Link className="Link" to="/KITE/rating_pps">РЕЙТИНГ ППС</Link></li>
+            <li><Link className="Link" to="/KITE/rating_inst">РЕЙТИНГ ИНСТИТУТОВ</Link></li>
+          </ul>
+        </div>
         <BackButton />
       </div>
     </div>

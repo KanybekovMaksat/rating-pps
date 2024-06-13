@@ -3,7 +3,7 @@ import BackButton from "../../components/Back"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function Rating_inst_un() {
+function Rating_inst_unk() {
   const [inst, setInst] = useState([]);
   const [sortedField, setSortedField] = useState('sum');
   const [filteredInst, setFilteredInst] = useState([]);
@@ -66,4 +66,4 @@ function Rating_inst_un() {
   )
 }
 
-export default Rating_inst_un;
+export default Rating_inst_unk;
