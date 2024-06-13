@@ -84,7 +84,6 @@ function Authorization() {
               <>
                 <div className="auth__btn">
                   <button onClick={handleLogin} className="bnt__log Edu__text-S">Войти</button>
-                  <Link to="/Registration" className="bnt__reg Edu__text-S link_btn">Регистрация</Link>
                 </div>
               </>
             )}

@@ -68,6 +68,7 @@ function App() {
       return (
         <Route element={<PrivateRouteAdmin />}>
           <Route path='/private_office' element={<PrivateOffice />} />
+          <Route path='/Registration' element={<Registration />} />
           <Route path='/Progress' element={<Progress />} />
           <Route path='/Ural' element={<Research />} />
           <Route path='/Education' element={<Education />} />
@@ -112,7 +113,6 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/LPPS' element={<LPPS />} />
         <Route path='/Authorization' element={<Authorization />} />
-        <Route path='/Registration' element={<Registration />} />
         <Route path='/Questionnaire' element={<Questionnaire />} />
         <Route path='/user/:id' element={<UserInfo />} />
         <Route path='/MUIT' element={<Muit />} />
