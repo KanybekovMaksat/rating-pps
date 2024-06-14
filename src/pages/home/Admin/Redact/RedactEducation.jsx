@@ -5,12 +5,17 @@ import { useEffect, useState } from "react";
 import addIcon from '../../../../img/add.png';
 
 function RedactEducation() {
+  const token = localStorage.getItem('token');
   const [titles, setTitles] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`https://api.pps.makalabox.com/api/admin/stage/edit/innovative/title`);
+        const resp = await axios.get(`https://api.pps.makalabox.com/api/admin/stage/edit/innovative/title`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
         const data = resp.data.titles;
         setTitles(data);
       } catch (error) {
