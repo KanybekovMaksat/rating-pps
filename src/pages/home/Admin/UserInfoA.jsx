@@ -13,7 +13,7 @@ function UserInfoA() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const resp = await axios.get(`https://api.pps.makalabox.comhttps://api.pps.makalabox.com/api/user/account/${id}`, {
+        const resp = await axios.get(`https://api.pps.makalabox.com/api/user/account/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           }
