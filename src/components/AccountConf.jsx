@@ -10,20 +10,6 @@ const AccountConf = () => {
   });
 
   useEffect(() => {
-    const getUserData = async () => {
-      try {
-        const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        const name = response.data.user.name;
-        setUserData(name);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
     const getUserId = async () => {
       try {
         const response = await axios.get('https://api.pps.makalabox.com/api/user/id', {
@@ -49,7 +35,6 @@ const AccountConf = () => {
   return (
     <div className="account__config">
       <div className="avatar__container"><div className="avatar"></div></div>
-      <h4 className="user__name">{userData.name}</h4>
       <ul className="config__list">
         <li className="config__items-li">
           <Link to={`/my_account/${id}`} className="config__items">Моя учётная запись</Link>
