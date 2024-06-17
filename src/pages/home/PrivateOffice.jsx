@@ -23,15 +23,25 @@ function PrivateOffice() {
   });
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const getUserData = async (token) => {
+    try {
+      const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      return response.data.user;
+    } catch (error) {
+      console.error('Ошибка при получении данных пользователя:', error);
+      throw error;
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResponse = await axios.get('https://api.pps.makalabox.com/api/user/name', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        setUserData(userResponse.data.user);
+        const user = await getUserData(token);
+        setUserData(user);
         setIsAuthenticated(true);
 
         const infoResponse = await axios.get('https://api.pps.makalabox.com/api/user/info', {
@@ -184,7 +194,7 @@ function PrivateOffice() {
                   )}
                 </div>
                 <div className="form">
-                  <p className="input__text-s bold">Штатный/Совместитель</p>
+                  <p className="input__text-s bold">Штатный/Совместитель</п>
                   <select value={selectedValues.stat} onChange={(e) => handleSelect('stat', e.target.value)} className="input__office Montherat">
                     <option value=""></option>
                     <option value="Штатный">Штатный</option>
