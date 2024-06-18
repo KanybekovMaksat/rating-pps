@@ -23,22 +23,22 @@ function PrivateOffice() {
   });
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const getUserData = async (token) => {
-    try {
-      const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      const user = response.data.user;
-      setUserData(user);
-      setIsAuthenticated(true);
-    } catch (error) {
-      console.error('Ошибка при получении данных пользователя:', error);
-    }
-  };
-
   useEffect(() => {
+    const getUserData = async (token) => {
+      try {
+        const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        const user = response.data.user;
+        setUserData(user);
+        setIsAuthenticated(true);
+      } catch (error) {
+        console.error('Ошибка при получении данных пользователя:', error);
+      }
+    };
+
     const fetchData = async () => {
       try {
         const infoResponse = await axios.get('https://api.pps.makalabox.com/api/user/info', {
@@ -55,6 +55,7 @@ function PrivateOffice() {
       }
     };
 
+    getUserData();
     fetchData();
   }, [token]);
 
