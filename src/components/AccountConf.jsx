@@ -24,7 +24,6 @@ const AccountConf = () => {
       }
     };
 
-    getUserData();
     getUserId();
   }, [id, token, userData.data]);
 
