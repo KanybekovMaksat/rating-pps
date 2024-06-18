@@ -23,38 +23,38 @@ function PrivateOffice() {
   });
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const getUserData = async () => {
+    try {
+      const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      const user = response.data.user;
+      setUserData(user);
+      setIsAuthenticated(true);
+    } catch (error) {
+      console.error('Ошибка при получении данных пользователя:', error);
+    }
+  };
+
+  const fetchData = async () => {
+    try {
+      const infoResponse = await axios.get('https://api.pps.makalabox.com/api/user/info', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setInstitutes(infoResponse.data.institutes);
+      setUniversities(infoResponse.data.university);
+      setPositions(infoResponse.data.position);
+    } catch (error) {
+      console.error(error);
+      setIsAuthenticated(false);
+    }
+  };
+
   useEffect(() => {
-    const getUserData = async (token) => {
-      try {
-        const response = await axios.get('https://api.pps.makalabox.com/api/user/name', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        const user = response.data.user;
-        setUserData(user);
-        setIsAuthenticated(true);
-      } catch (error) {
-        console.error('Ошибка при получении данных пользователя:', error);
-      }
-    };
-
-    const fetchData = async () => {
-      try {
-        const infoResponse = await axios.get('https://api.pps.makalabox.com/api/user/info', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        setInstitutes(infoResponse.data.institutes);
-        setUniversities(infoResponse.data.university);
-        setPositions(infoResponse.data.position);
-      } catch (error) {
-        console.error(error);
-        setIsAuthenticated(false);
-      }
-    };
-
     getUserData();
     fetchData();
   }, [token]);
