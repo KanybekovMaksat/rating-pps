@@ -30,7 +30,9 @@ function PrivateOffice() {
           Authorization: `Bearer ${token}`
         }
       });
-      return response.data.user;
+      const user = response.data.user;
+      setUserData(user);
+      setIsAuthenticated(true);
     } catch (error) {
       console.error('Ошибка при получении данных пользователя:', error);
     }
@@ -39,10 +41,6 @@ function PrivateOffice() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const user = await getUserData(token);
-        setUserData(user);
-        setIsAuthenticated(true);
-
         const infoResponse = await axios.get('https://api.pps.makalabox.com/api/user/info', {
           headers: {
             Authorization: `Bearer ${token}`
