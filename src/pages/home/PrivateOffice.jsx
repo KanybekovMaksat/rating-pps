@@ -33,7 +33,6 @@ function PrivateOffice() {
       return response.data.user;
     } catch (error) {
       console.error('Ошибка при получении данных пользователя:', error);
-      throw error;
     }
   };
 
@@ -194,7 +193,7 @@ function PrivateOffice() {
                   )}
                 </div>
                 <div className="form">
-                  <p className="input__text-s bold">Штатный/Совместитель</п>
+                  <p className="input__text-s bold">Штатный/Совместитель</p>
                   <select value={selectedValues.stat} onChange={(e) => handleSelect('stat', e.target.value)} className="input__office Montherat">
                     <option value=""></option>
                     <option value="Штатный">Штатный</option>
