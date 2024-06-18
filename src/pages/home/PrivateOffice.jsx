@@ -112,6 +112,7 @@ function PrivateOffice() {
     setIsAuthenticated(false);
   }, []);
 
+
   return (
     <div className="private-office-contents">
       <div className="header">
