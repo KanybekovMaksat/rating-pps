@@ -4,13 +4,11 @@ import axios from "axios";
 import NavBar from "../../components/NavBar";
 
 function AwardsInfo() {
-
   const { id } = useParams();
   let token = localStorage.getItem('token')
   const [userData, setUserData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
-  const [selectedStages, setSelectedStages] = useState([]);
-
+  
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -25,26 +23,25 @@ function AwardsInfo() {
         console.log(error);
       }
     };
-
+  
     fetchUserData();
   }, [id, token]);
 
   const toggleItemSelection = (itemId, stage) => {
-    const isSelected = selectedItems.includes(itemId);
+    const itemKey = `${itemId}-${stage}`;
+    const isSelected = selectedItems.includes(itemKey);
     if (isSelected) {
-      setSelectedItems(selectedItems.filter(item => item !== itemId));
-      setSelectedStages(selectedStages.filter(selectedStage => selectedStage !== stage));
+      setSelectedItems(selectedItems.filter(item => item !== itemKey));
     } else {
-      setSelectedItems([...selectedItems, itemId]);
-      setSelectedStages([...selectedStages, stage]);
+      setSelectedItems([...selectedItems, itemKey]);
     }
   };
 
   const handleFreezeSelected = async () => {
     try {
       for (let i = 0; i < selectedItems.length; i++) {
-        const idBag = [{ id: selectedItems[i] }];
-        const stage = selectedStages[i];
+        const [itemId, stage] = selectedItems[i].split('-');
+        const idBag = [{ id: itemId }];
         const requestData = { "idBag": idBag };
         await axios.put(`https://api.pps.makalabox.com/api/user/${stage}/freeze`, requestData, {
           headers: {
@@ -61,8 +58,8 @@ function AwardsInfo() {
   const handleActiveSelected = async () => {
     try {
       for (let i = 0; i < selectedItems.length; i++) {
-        const idBag = [{ id: selectedItems[i] }];
-        const stage = selectedStages[i];
+        const [itemId, stage] = selectedItems[i].split('-');
+        const idBag = [{ id: itemId }];
         const requestData = { "idBag": idBag };
         await axios.put(`https://api.pps.makalabox.com/api/user/${stage}/active`, requestData, {
           headers: {
@@ -79,8 +76,8 @@ function AwardsInfo() {
   const handleDeleteSelected = async () => {
     try {
       for (let i = 0; i < selectedItems.length; i++) {
-        const idBag = [{ id: selectedItems[i] }];
-        const stage = selectedStages[i];
+        const [itemId, stage] = selectedItems[i].split('-');
+        const idBag = [{ id: itemId }];
         const requestData = { "idBag": idBag };
         console.log(requestData);
         await axios.delete(`https://api.pps.makalabox.com/api/user/account/${stage}/delete`, {
@@ -97,7 +94,7 @@ function AwardsInfo() {
   };
 
   return (
-    <div className="сontents">
+    <div className="contents">
       <div className="private-office-contents">
         <div className="header">
           <NavBar />
@@ -120,14 +117,14 @@ function AwardsInfo() {
             )}
             {userData.userAwards &&
               userData.userAwards.map((award, i) => (
-                <div className="userInfo-in userInfo__text-S" key={award.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={award.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${award.status === 'freeze' ? 'crossed-out' : ''}`}>{award.name}</p>
                   <div>
                     <Link target="_blank" to={award.link}>Link</Link>
                     <input
                       className="check"
                       type="checkbox"
-                      checked={selectedItems.includes(award.id)}
+                      checked={selectedItems.includes(`${award.id}-${award.stage}`)}
                       onChange={() => toggleItemSelection(award.id, award.stage)}
                     />
                   </div>
@@ -140,14 +137,14 @@ function AwardsInfo() {
             )}
             {userData.userResearch &&
               userData.userResearch.map((research, i) => (
-                <div className="userInfo-in userInfo__text-S" key={research.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={research.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${research.status === 'freeze' ? 'crossed-out' : ''}`}>{research.name}</p>
                   <div>
                     <Link target="_blank" to={research.link}>Link</Link>
                     <input
                       className="check"
                       type="checkbox"
-                      checked={selectedItems.includes(research.id)}
+                      checked={selectedItems.includes(`${research.id}-${research.stage}`)}
                       onChange={() => toggleItemSelection(research.id, research.stage)}
                     />
                   </div>
@@ -160,14 +157,14 @@ function AwardsInfo() {
             )}
             {userData.userInnovative &&
               userData.userInnovative.map((innovative, i) => (
-                <div className="userInfo-in userInfo__text-S" key={innovative.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={innovative.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${innovative.status === 'freeze' ? 'crossed-out' : ''}`}>{innovative.name}</p>
                   <div>
                     <Link target="_blank" to={innovative.link}>Link</Link>
                     <input
                       className="check"
                       type="checkbox"
-                      checked={selectedItems.includes(innovative.id)}
+                      checked={selectedItems.includes(`${innovative.id}-${innovative.stage}`)}
                       onChange={() => toggleItemSelection(innovative.id, innovative.stage)}
                     />
                   </div>
@@ -180,14 +177,14 @@ function AwardsInfo() {
             )}
             {userData.userSocial &&
               userData.userSocial.map((social, i) => (
-                <div className="userInfo-in userInfo__text-S" key={social.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={social.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${social.status === 'freeze' ? 'crossed-out' : ''}`}>{social.name}</p>
                   <div>
                     <Link target="_blank" to={social.link}>Link</Link>
                     <input
                       className="check"
                       type="checkbox"
-                      checked={selectedItems.includes(social.id)}
+                      checked={selectedItems.includes(`${social.id}-${social.stage}`)}
                       onChange={() => toggleItemSelection(social.id, social.stage)}
                     />
                   </div>
