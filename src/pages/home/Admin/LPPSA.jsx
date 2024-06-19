@@ -30,7 +30,7 @@ function Lppsa() {
   );
 
   return (
-    <div className="private-office-contents">
+    <div className="private-office-contents сontents">
       <div className="header">
         <NavBar />
       </div>
