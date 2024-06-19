@@ -42,7 +42,7 @@ function UserInfoA() {
     try {
       const idBag = selectedItems.map(itemId => ({ id: itemId }));
       const requestData = { "idBag": idBag };
-      await axios.put(`https://api.pps.makalabox.comhttps://api.pps.makalabox.com/api/admin/${selectedStage}/freeze`, requestData);
+      await axios.put(`https://api.pps.makalabox.com/api/admin/${selectedStage}/freeze`, requestData);
       location.reload();
     } catch (error) {
       console.log(error);
@@ -53,7 +53,7 @@ function UserInfoA() {
     try {
       const idBag = selectedItems.map(itemId => ({ id: itemId }));
       const requestData = { "idBag": idBag };
-      await axios.put(`https://api.pps.makalabox.comhttps://api.pps.makalabox.com/api/admin/${selectedStage}/active`, requestData);
+      await axios.put(`https://api.pps.makalabox.com/api/admin/${selectedStage}/active`, requestData);
       location.reload();
     } catch (error) {
       console.log(error);
