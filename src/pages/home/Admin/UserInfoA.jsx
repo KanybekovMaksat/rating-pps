@@ -5,10 +5,10 @@ import NavBar from "../../../components/NavBar";
 
 function UserInfoA() {
   const { id } = useParams();
-  let token = localStorage.getItem('token')
+  let token = localStorage.getItem('token');
   const [userData, setUserData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
-  const [selectedStage, setSelectedStage] = useState('');
+  const [selectedStages, setSelectedStages] = useState({});
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -17,7 +17,7 @@ function UserInfoA() {
           headers: {
             Authorization: `Bearer ${token}`,
           }
-        })
+        });
         const data = resp.data;
         setUserData(data);
       } catch (error) {
@@ -32,17 +32,24 @@ function UserInfoA() {
     const isSelected = selectedItems.includes(itemId);
     if (isSelected) {
       setSelectedItems(selectedItems.filter(item => item !== itemId));
+      const newSelectedStages = { ...selectedStages };
+      delete newSelectedStages[itemId];
+      setSelectedStages(newSelectedStages);
     } else {
       setSelectedItems([...selectedItems, itemId]);
+      setSelectedStages({ ...selectedStages, [itemId]: stage });
     }
-    setSelectedStage(stage);
   };
 
   const handleFreezeSelected = async () => {
     try {
       const idBag = selectedItems.map(itemId => ({ id: itemId }));
-      const requestData = { "idBag": idBag };
-      await axios.put(`https://api.pps.makalabox.com/api/admin/${selectedStage}/freeze`, requestData);
+      const requestData = { idBag };
+      await axios.put(`https://api.pps.makalabox.com/api/admin/freeze`, requestData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       location.reload();
     } catch (error) {
       console.log(error);
@@ -52,8 +59,12 @@ function UserInfoA() {
   const handleActiveSelected = async () => {
     try {
       const idBag = selectedItems.map(itemId => ({ id: itemId }));
-      const requestData = { "idBag": idBag };
-      await axios.put(`https://api.pps.makalabox.com/api/admin/${selectedStage}/active`, requestData);
+      const requestData = { idBag };
+      await axios.put(`https://api.pps.makalabox.com/api/admin/active`, requestData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       location.reload();
     } catch (error) {
       console.log(error);
@@ -84,7 +95,7 @@ function UserInfoA() {
             )}
             {userData.userAwards &&
               userData.userAwards.map((award, i) => (
-                <div className="userInfo-in userInfo__text-S" key={award.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={award.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${award.status === 'freeze' ? 'crossed-out' : ''}`}>{award.name}</p>
                   <div>
                     <Link to={award.link}>Link</Link>
@@ -104,7 +115,7 @@ function UserInfoA() {
             )}
             {userData.userResearch &&
               userData.userResearch.map((research, i) => (
-                <div className="userInfo-in userInfo__text-S" key={research.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={research.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${research.status === 'freeze' ? 'crossed-out' : ''}`}>{research.name}</p>
                   <div>
                     <Link to={research.link}>Link</Link>
@@ -124,7 +135,7 @@ function UserInfoA() {
             )}
             {userData.userInnovative &&
               userData.userInnovative.map((innovative, i) => (
-                <div className="userInfo-in userInfo__text-S" key={innovative.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={innovative.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${innovative.status === 'freeze' ? 'crossed-out' : ''}`}>{innovative.name}</p>
                   <div>
                     <Link to={innovative.link}>Link</Link>
@@ -144,7 +155,7 @@ function UserInfoA() {
             )}
             {userData.userSocial &&
               userData.userSocial.map((social, i) => (
-                <div className="userInfo-in userInfo__text-S" key={social.id} style={{ backgroundColor: i % 2 == 0 ? '#0047FF4D' : '#33FF001A' }}>
+                <div className="userInfo-in userInfo__text-S" key={social.id} style={{ backgroundColor: i % 2 === 0 ? '#0047FF4D' : '#33FF001A' }}>
                   <p className={`userInfo-in-text ${social.status === 'freeze' ? 'crossed-out' : ''}`}>{social.name}</p>
                   <div>
                     <Link to={social.link}>Link</Link>
