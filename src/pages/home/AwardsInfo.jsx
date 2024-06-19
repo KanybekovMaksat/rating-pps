@@ -8,7 +8,7 @@ function AwardsInfo() {
   const token = localStorage.getItem('token');
   const [userData, setUserData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
-  
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
