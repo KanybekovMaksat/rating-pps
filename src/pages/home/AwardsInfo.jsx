@@ -58,7 +58,7 @@ function AwardsInfo() {
   };
 
   return (
-    <div className="contents">
+    <div className="сontents">
       <div className="private-office-contents">
         <div className="header">
           <NavBar />
