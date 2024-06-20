@@ -38,8 +38,6 @@ function Rating_ppsm() {
     data.name.toLowerCase().includes(searchInput.toLowerCase())
   );
 
-  console.log("Filtered data:", filteredData);
-
   return (
     <div className="сontents">
       <div className="header">
