@@ -53,6 +53,9 @@
   display: flex;
   justify-content: space-between;
   width: 50%;
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
 }
 a.bnt__log.Link {
   text-decoration: none;
