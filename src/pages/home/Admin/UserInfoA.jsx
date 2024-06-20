@@ -40,7 +40,7 @@ function UserInfoA() {
       for (let i = 0; i < selectedItems.length; i++) {
         const [itemId, stage] = selectedItems[i].split('-');
         const requestData = { idBag: [{ id: itemId }] };
-        const url = `https://api.pps.makalabox.com/api/user/${stage}/${action}`;
+        const url = `https://api.pps.makalabox.com/api/user/account/${stage}/${action}`;
         const method = action === 'delete' ? 'delete' : 'put';
         await axios({
           method,
