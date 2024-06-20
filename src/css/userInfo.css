@@ -59,3 +59,8 @@
 .bline {
   border-bottom: #2D4478 2px solid;
 }
+.сontents {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
