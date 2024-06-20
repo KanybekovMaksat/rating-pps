@@ -1,5 +1,5 @@
-import NavBar from "../../components/NavBar"
-import BackButton from "../../components/Back"
+import NavBar from "../../components/NavBar";
+import BackButton from "../../components/Back";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ function Rating_ppsm() {
         const resp = await axios.get('https://api.pps.makalabox.com/api/rating/pps');
         const sortedData = Object.values(resp.data.pps).sort((a, b) => b.sum - a.sum);
         setUserData(sortedData);
-        console.log(sortedData);
+        console.log("Fetched and sorted data:", sortedData);
       } catch (error) {
         console.log(error);
       }
@@ -37,6 +37,8 @@ function Rating_ppsm() {
   const filteredData = userData.filter((data) =>
     data.name.toLowerCase().includes(searchInput.toLowerCase())
   );
+
+  console.log("Filtered data:", filteredData);
 
   return (
     <div className="сontents">
@@ -95,4 +97,4 @@ function Rating_ppsm() {
   )
 }
 
-export default Rating_ppsm
+export default Rating_ppsm;
