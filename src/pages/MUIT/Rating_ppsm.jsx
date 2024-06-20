@@ -59,9 +59,9 @@ function Rating_ppsm() {
             </tr>
           </thead>
           <tbody>
-            {userData.map((data) => (
+            {userData.map((data, i) => (
               <tr key={data.id}>
-                <td>{data.id}</td>
+                <td>{i + 1}</td>
                 <td><Link to={`/user/${data.id}`}>{data.name}</Link></td>
                 <td>{data.institute}</td>
                 <td>{data.awardPoints}</td>
