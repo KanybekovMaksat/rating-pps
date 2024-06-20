@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function Rating_ppsm() {
   const [userData, setUserData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [sortedField, setSortedField] = useState('sum');
 
   useEffect(() => {
@@ -15,6 +16,7 @@ function Rating_ppsm() {
         const sortedData = Object.values(resp.data.pps).sort((a, b) => b.sum - a.sum);
         setUserData(sortedData);
         console.log(sortedData);
+        setUsers(data);
       } catch (error) {
         console.log(error);
       }
@@ -29,6 +31,14 @@ function Rating_ppsm() {
     setSortedField(field);
   };
 
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="сontents">
       <div className="header">
@@ -38,8 +48,14 @@ function Rating_ppsm() {
         <div className="title__table-un">
           <h2 className="Edu__text-L">Рейтинг ППС</h2>
           <label htmlFor="" className="search__label">
-            <input type="text" className="search__input-rating" />
-            <div className="search__btn-rating"><div className="search__btn-in"></div>
+            <input
+              type="text"
+              className="search__input-rating"
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+            />
+            <div className="search__btn">
+              <div className="search__btn-in"></div>
             </div>
           </label>
         </div>
@@ -75,7 +91,7 @@ function Rating_ppsm() {
         </table>
         <BackButton />
       </div>
-    </div>
+    </div >
   )
 }
 
