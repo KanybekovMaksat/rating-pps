@@ -5,13 +5,13 @@
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 input[type='number'],
 input[type="number"]:hover,
 input[type="number"]:focus {
-  appearance: none;
-  -moz-appearance: textfield;
+    appearance: none;
+    -moz-appearance: textfield;
 }
 #root {
   background-color: #fff;
@@ -82,54 +82,4 @@ h6, .h6 {
   padding: 13.5px 30px;
   margin-bottom: 15px;
   cursor: pointer;
-}
-
-@media (max-width: 1024px) {
-  .PNF__text {
-    font-size: 40px; 
-  }
-  .btn {
-    margin-top: 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .main {
-    width: 95%;
-  }
-  .PNF__text {
-    font-size: 30px;
-  }
-  .btn {
-    margin-top: 16px;
-    font-size: 18px;
-  }
-  .btn__link {
-    padding: 10px 16px; 
-  }
-  .btn__Back {
-    width: 100%;
-    justify-content: center;
-  }
-  .Back__link {
-    padding: 10px 24px; 
-  }
-}
-
-@media (max-width: 480px) {
-  .PNF__text {
-    font-size: 24px;
-  }
-  .h5, h6, .h6 {
-    font-size: 18px;
-  }
-  .btn {
-    font-size: 16px;
-  }
-  .btn__link {
-    padding: 8px 14px;
-  }
-  .Back__link {
-    padding: 8px 20px;
-  }
 }
