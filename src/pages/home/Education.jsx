@@ -91,7 +91,7 @@ const Education = () => {
       const newSelectNames = data.map(item => item.name);
       setOptions(newOptions);
       setSelectNames(newSelectNames);
-      setIsOpen(new Array(newOptions.length).fill(false));  // Initialize the isOpen array correctly
+      setIsOpen(new Array(newOptions.length).fill(false));
     } catch (error) {
       console.log(error);
     }

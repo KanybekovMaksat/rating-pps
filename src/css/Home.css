@@ -45,7 +45,6 @@
   height: 191px;
 }
 
-/* Responsive Styles */
 @media (max-width: 1200px) {
   .home__cards {
     justify-content: space-evenly;

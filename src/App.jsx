@@ -5,7 +5,6 @@ import axios from 'axios';
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteAdmin from './components/PrivateRouteAdmin';
 import PageNotFound from './pages/PageNotFound';
-import Wellcome from './pages/Wellcome';
 import Home from './pages/Home';
 import LPPS from './pages/home/LPPS';
 import Authorization from './pages/home/Authorization';
@@ -108,8 +107,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Wellcome />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/LPPS' element={<LPPS />} />
         <Route path='/Authorization' element={<Authorization />} />
         <Route path='/Registration' element={<Registration />} />
