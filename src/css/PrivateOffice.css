@@ -4,6 +4,7 @@
 }
 .private-office__main {
   display: flex;
+  flex-wrap: wrap;
 }
 .account__config {
   background-color: #2D4478;
@@ -69,6 +70,7 @@
 .office__in {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .form {
   margin-left: 15px;
@@ -84,7 +86,7 @@
   border-radius: 7.5px;
   padding-left: 3px;
 }
-.input__office>.input__text-s{
+.input__office>.input__text-s {
   padding: 10px;
 }
 .input__text-s {
@@ -169,4 +171,117 @@
   color: white;
   font-size: small;
   background-image: url(../img/RectangleStart.png);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .private-office__main {
+    flex-direction: column;
+  }
+
+  .account__config {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .avatar__container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+    background-size: 130px 130px;
+  }
+
+  .user__name {
+    font-size: 24px;
+  }
+
+  .config__items {
+    font-size: 22px;
+  }
+
+  .input__office {
+    width: 90%;
+  }
+
+  .btn__office {
+    margin: 20px auto;
+  }
+
+  .btn__link {
+    padding: 8px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .avatar__container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+  }
+
+  .user__name {
+    font-size: 20px;
+  }
+
+  .config__items {
+    font-size: 20px;
+  }
+
+  .input__office {
+    width: 100%;
+  }
+
+  .btn__link {
+    padding: 6px 28px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar__container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    background-size: 80px 80px;
+  }
+
+  .user__name {
+    font-size: 18px;
+  }
+
+  .config__items {
+    font-size: 18px;
+  }
+
+  .btn__link {
+    padding: 4px 20px;
+    font-size: 16px;
+  }
+
+  .header__menu,
+  .header__menu-s,
+  .header__menu-m {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .head__item,
+  .head__item_1 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
 }

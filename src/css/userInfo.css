@@ -1,66 +1,108 @@
-.сontents {
+/* Base styles */
+.contents {
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
 }
+
 .userData {
   width: 90%;
+  max-width: 800px;
   margin: 0 auto;
   margin-bottom: 20px;
 }
-.userInfo, .userInfo-in  {
+
+.userInfo,
+.userInfo-in {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 30px;
 }
+
 .userInfo-in {
   padding: 5px;
+  width: 100%;
 }
+
 .userInfo__right {
-  width: 80%;
+  width: 100%;
 }
-.userInfo__name {
+
+.userInfo__name,
+.userInfo__title,
+.userInfo__text,
+.userInfo__text-S {
   color: #2D4478;
-  display: flex;
-  align-items: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.userInfo__name {
   font-size: 36px;
   font-weight: 700;
 }
+
 .userInfo__title {
-  color: #2D4478;
-  display: flex;
-  align-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 27px;
   font-weight: 700;
 }
+
 .userInfo__text {
-  color: black;
-  display: flex;
-  align-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 27px;
   font-weight: 700;
 }
+
 .userInfo__text-S {
-  color: black;
-  display: flex;
-  align-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 24px;
   font-weight: 350;
   margin: 2px;
 }
-.userInfo-in-text{
+
+.userInfo-in-text {
   margin-left: 20px;
-  width: 93%;
+  width: calc(100% - 20px);
 }
+
 .bline {
   border-bottom: #2D4478 2px solid;
 }
-.сontents {
-  height: 100%;
-  overflow: auto;
-  overflow-x: hidden;
+
+@media (max-width: 768px) {
+  .userData {
+    width: 95%;
+  }
+
+  .userInfo__name {
+    font-size: 28px;
+  }
+
+  .userInfo__title {
+    font-size: 22px;
+  }
+
+  .userInfo__text {
+    font-size: 22px;
+  }
+
+  .userInfo__text-S {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .userInfo__name {
+    font-size: 24px;
+  }
+
+  .userInfo__title {
+    font-size: 18px;
+  }
+
+  .userInfo__text {
+    font-size: 18px;
+  }
+
+  .userInfo__text-S {
+    font-size: 16px; 
+  }
 }

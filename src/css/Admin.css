@@ -21,6 +21,7 @@
   font-size: 22px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .custom-select {
   position: absolute;
@@ -35,11 +36,11 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
-  width: 436px;
+  width: 100%; /* Изменено для адаптивности */
   box-sizing: border-box;
 }
 .admin__btn {
-  width: 200px;
+  width: 100%; /* Изменено для адаптивности */
   margin: 2px auto;
 }
 .admin__link {
@@ -52,7 +53,7 @@
 .jc-sb {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100%; /* Изменено для адаптивности */
 }
 a.bnt__log.Link {
   text-decoration: none;
@@ -75,7 +76,8 @@ a.bnt__log.Link {
 .admin__link {
   color: white;
   font-size: larger;
-  width: 646px;
+  width: 100%; /* Изменено для адаптивности */
+  max-width: 646px; /* Добавлено для ограничения ширины */
   height: 62px;
   display: flex;
   justify-content: center;
@@ -91,6 +93,34 @@ a.bnt__log.Link {
 .stage_name {
   margin: 15px 5.5%;
 }
-.addPng{
+.addPng {
   width: 45px;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+  .user {
+    font-size: 18px; /* Уменьшаем размер шрифта на малых экранах */
+    flex-direction: column; /* Изменяем направление флекс-боксов */
+    align-items: flex-start; /* Выровняем элементы по началу */
+  }
+  .custom-select {
+    position: static; /* Изменяем позиционирование для адаптивности */
+    width: 100%; /* Делаем выбор более гибким */
+  }
+  .options-container {
+    width: 100%; /* Устанавливаем ширину контейнера на 100% */
+  }
+  .jc-sb {
+    width: 100%; /* Устанавливаем ширину на 100% */
+  }
+  .admin__links {
+    flex-direction: column; /* Делаем колонки для ссылок */
+    width: 100%; /* Устанавливаем ширину на 100% */
+    margin: 0; /* Убираем внешние отступы */
+  }
+  .admin__link {
+    width: 100%; /* Устанавливаем ширину на 100% */
+    margin: 10px 0; /* Добавляем отступы между ссылками */
+  }
 }
