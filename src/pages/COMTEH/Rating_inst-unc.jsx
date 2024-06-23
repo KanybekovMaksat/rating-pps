@@ -55,7 +55,6 @@ function Rating_inst_unc() {
               <tr key={i}>
                 <td>{institution.name}</td>
                 <td>{institution.middlePoints}</td>
-                <td>{institution.sum}</td>
               </tr>
             ))}
           </tbody>
