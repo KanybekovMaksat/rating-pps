@@ -47,7 +47,6 @@ function Rating_inst_unc() {
             <tr>
               <th className="un_l">Отделения КОМТЕХНО</th>
               <th className="sorter un_l" onClick={() => sortData('middlePoints')}>Средний балл ППС</th>
-              <th className="sorter un_l" onClick={() => sortData('sum')}>Итого</th>
             </tr>
           </thead>
           <tbody>
