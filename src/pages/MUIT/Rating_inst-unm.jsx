@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar"
 import BackButton from "../../components/Back"
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Rating_inst_unm() {
   const [inst, setInst] = useState([]);
@@ -52,7 +53,7 @@ function Rating_inst_unm() {
           <tbody>
             {filteredInst.map((institution, i) => (
               <tr key={i}>
-                <td>{institution.name}</td>
+                <td><Link to={`/department/${institution.id}`}></Link>{institution.name}</td>
                 <td>{institution.middlePoints}</td>
               </tr>
             ))}

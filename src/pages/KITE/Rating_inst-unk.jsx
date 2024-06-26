@@ -16,7 +16,6 @@ function Rating_inst_unk() {
         const data = response.data.institutions;
         setInst(data);
         setFilteredInst(data);
-        console.log(data)
       } catch (error) {
         console.log(error);
       }
@@ -52,9 +51,9 @@ function Rating_inst_unk() {
             </tr>
           </thead>
           <tbody>
-            {filteredInst.map((institution, i, id) => (
+            {filteredInst.map((institution, i) => (
               <tr key={i}>
-                <td><Link to={`/stage/${id}`}>{institution.name}</Link></td>
+                <td><Link to={`/department/${institution.id}`}>{institution.name}</Link></td>
                 <td>{institution.middlePoints}</td>
               </tr>
             ))}
