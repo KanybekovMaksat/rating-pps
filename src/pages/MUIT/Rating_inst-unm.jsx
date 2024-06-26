@@ -53,7 +53,7 @@ function Rating_inst_unm() {
           <tbody>
             {filteredInst.map((institution, i) => (
               <tr key={i}>
-                <td><Link to={`/department/${institution.id}`}></Link>{institution.name}</td>
+                <td><Link to={`/department/${institution.id}`}>{institution.name}</Link></td>
                 <td>{institution.middlePoints}</td>
               </tr>
             ))}

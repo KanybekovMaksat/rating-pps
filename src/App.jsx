@@ -20,10 +20,11 @@ import Rating_inst_unc from './pages/COMTEH/Rating_inst-unc';
 import Kite from './pages/KITE';
 import Rating_ppsk from './pages/KITE/Rating_ppsk';
 import Rating_inst_unk from './pages/KITE/Rating_inst-unk';
-import Progress from './pages/home/Progress';
-import Research from './pages/home/Research';
-import Education from './pages/home/Education';
-import Social from './pages/home/Social';
+import Department from './pages/home/Department';
+// import Progress from './pages/home/Progress';
+// import Research from './pages/home/Research';
+// import Education from './pages/home/Education';
+// import Social from './pages/home/Social';
 import UserInfo from './pages/home/UserInfo';
 import UserInfoA from './pages/home/Admin/UserInfoA';
 import Admin from './pages/home/Admin/Admin';
@@ -122,6 +123,7 @@ function App() {
         <Route path='/KITE' element={<Kite />} />
         <Route path='/KITE/rating_pps' element={<Rating_ppsk />} />
         <Route path='/KITE/rating_inst' element={<Rating_inst_unk />} />
+        <Route path='/department/:id' element={<Department />}/>
         <Route path='*' element={<PageNotFound />} />
         {renderRoutesForRole()}
       </Routes>
