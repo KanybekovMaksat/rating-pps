@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar"
 import BackButton from "../../components/Back"
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Rating_inst_unk() {
   const [inst, setInst] = useState([]);
@@ -15,6 +16,7 @@ function Rating_inst_unk() {
         const data = response.data.institutions;
         setInst(data);
         setFilteredInst(data);
+        console.log(data)
       } catch (error) {
         console.log(error);
       }
@@ -50,9 +52,9 @@ function Rating_inst_unk() {
             </tr>
           </thead>
           <tbody>
-            {filteredInst.map((institution, i) => (
+            {filteredInst.map((institution, i, id) => (
               <tr key={i}>
-                <td>{institution.name}</td>
+                <td><Link to={`/stage/${id}`}>{institution.name}</Link></td>
                 <td>{institution.middlePoints}</td>
               </tr>
             ))}

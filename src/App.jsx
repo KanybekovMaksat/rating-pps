@@ -67,10 +67,10 @@ function App() {
       return (
         <Route element={<PrivateRouteAdmin />}>
           <Route path='/private_office' element={<PrivateOffice />} />
-          <Route path='/Progress' element={<Progress />} />
+          {/* <Route path='/Progress' element={<Progress />} />
           <Route path='/Ural' element={<Research />} />
           <Route path='/Education' element={<Education />} />
-          <Route path='/Social' element={<Social />} />
+          <Route path='/Social' element={<Social />} /> */}
           <Route path='/user/:id' element={<UserInfo />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='/user/admin/:id' element={<UserInfoA />} />
@@ -91,10 +91,10 @@ function App() {
       return (
         <Route element={<PrivateRoute />}>
           <Route path='/private_office' element={<PrivateOffice />} />
-          <Route path='/Progress' element={<Progress />} />
+          {/* <Route path='/Progress' element={<Progress />} />
           <Route path='/Ural' element={<Research />} />
           <Route path='/Education' element={<Education />} />
-          <Route path='/Social' element={<Social />} />
+          <Route path='/Social' element={<Social />} /> */}
           <Route path='/user/:id' element={<UserInfo />} />
           <Route path='/my_account/:id' element={<AwardsInfo />} />
           <Route path='/redact/:id' element={<Redact />} />
