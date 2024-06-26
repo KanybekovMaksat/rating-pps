@@ -14,12 +14,15 @@ import PrivateOffice from './pages/home/PrivateOffice';
 import Muit from './pages/MUIT';
 import Rating_ppsm from './pages/MUIT/Rating_ppsm';
 import Rating_inst_unm from './pages/MUIT/Rating_inst-unm';
+import Rating_questm from './pages/MUIT/Rating_quest';
 import Comteh from './pages/COMTEH';
 import Rating_ppsc from './pages/COMTEH/Rating_ppsc';
 import Rating_inst_unc from './pages/COMTEH/Rating_inst-unc';
+import Rating_questc from './pages/COMTEH/Rating_quest';
 import Kite from './pages/KITE';
 import Rating_ppsk from './pages/KITE/Rating_ppsk';
 import Rating_inst_unk from './pages/KITE/Rating_inst-unk';
+import Rating_questk from './pages/KITE/Rating_quest';
 import Department from './pages/home/Department';
 // import Progress from './pages/home/Progress';
 // import Research from './pages/home/Research';
@@ -117,12 +120,15 @@ function App() {
         <Route path='/MUIT' element={<Muit />} />
         <Route path='/MUIT/rating_pps' element={<Rating_ppsm />} />
         <Route path='/MUIT/rating_inst' element={<Rating_inst_unm />} />
+        <Route path='/MUIT/rating_quest' element={<Rating_questm />} />
         <Route path='/COMTEH' element={<Comteh />} />
         <Route path='/COMTEH/rating_pps' element={<Rating_ppsc />} />
         <Route path='/COMTEH/rating_inst' element={<Rating_inst_unc />} />
+        <Route path='/COMTEH/rating_quest' element={<Rating_questc />} />
         <Route path='/KITE' element={<Kite />} />
         <Route path='/KITE/rating_pps' element={<Rating_ppsk />} />
         <Route path='/KITE/rating_inst' element={<Rating_inst_unk />} />
+        <Route path='/KITE/rating_quest' element={<Rating_questk />} />
         <Route path='/department/:id' element={<Department />}/>
         <Route path='*' element={<PageNotFound />} />
         {renderRoutesForRole()}
