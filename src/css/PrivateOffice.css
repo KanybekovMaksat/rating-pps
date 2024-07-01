@@ -131,7 +131,7 @@
   justify-content: center;
 }
 .header__menu-s {
-  margin: 0 0 30px 17px;
+  margin: 10px 0 30px 17px;
   width: 707.15px;
   display: flex;
   flex-direction: row;

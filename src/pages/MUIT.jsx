@@ -17,7 +17,7 @@ function Muit() {
           <ul>
             <li><Link className="Link" to="/MUIT/rating_pps">РЕЙТИНГ ППС</Link></li>
             <li><Link className="Link" to="/MUIT/rating_inst">РЕЙТИНГ ИНСТИТУТОВ</Link></li>
-            <li><Link className="Link" to="/MUIT/rating_quest">РЕЙТИНГ ПО НАГРАДАМ</Link></li>
+            <li><Link className="Link" to="/rating/awards">РЕЙТИНГ ПО НАГРАДАМ</Link></li>
           </ul>
         </div>
         <BackButton/>

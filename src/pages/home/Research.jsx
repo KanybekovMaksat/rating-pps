@@ -95,7 +95,7 @@ const Research = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     fetchData();

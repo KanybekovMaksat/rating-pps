@@ -17,7 +17,7 @@ function Comteh() {
           <ul>
             <li><Link className="Link" to="/COMTEH/rating_pps">РЕЙТИНГ ППС</Link></li>
             <li><Link className="Link" to="/COMTEH/rating_inst">РЕЙТИНГ ОТДЕЛЕНИЙ</Link></li>
-            <li><Link className="Link" to="/COMTEH/rating_quest">РЕЙТИНГ ПО НАГРАДАМ</Link></li>
+            <li><Link className="Link" to="/rating/awards">РЕЙТИНГ ПО НАГРАДАМ</Link></li>
           </ul>
         </div>
         <BackButton />
