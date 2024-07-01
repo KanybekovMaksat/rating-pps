@@ -66,22 +66,23 @@ const Rating = () => {
         <Link to="/rating/social" className="head__item Montherat">Воспитательная, общественная деятельность</Link>
       </div>
       <div className="main">
-        <select name="award" value={selectedAward} onChange={handleAwardChange}>
-          {data.map((award) => (
-            <option key={award.id} value={award.id}>
-              {award.name}
-            </option>
-          ))}
-        </select>
-
-        <select name="subtitle" value={selectedSubtitle} onChange={handleSubtitleChange}>
-          {selectedAward &&
-            data.find((award) => award.id === selectedAward)?.subtitle.map((sub) => (
-              <option key={sub.id} value={sub.id}>
-                {sub.name}
+        <div className="rating_select">
+          <select className='input__office' name="award" value={selectedAward} onChange={handleAwardChange}>
+            {data.map((award) => (
+              <option key={award.id} value={award.id}>
+                {award.name}
               </option>
             ))}
-        </select>
+          </select>
+          <select className='input__office' name="subtitle" value={selectedSubtitle} onChange={handleSubtitleChange}>
+            {selectedAward &&
+              data.find((award) => award.id === selectedAward)?.subtitle.map((sub) => (
+                <option key={sub.id} value={sub.id}>
+                  {sub.name}
+                </option>
+              ))}
+          </select>
+        </div>
         <div className="title__table-un">
           <table className="table">
             <thead>

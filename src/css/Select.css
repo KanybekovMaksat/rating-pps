@@ -49,3 +49,8 @@
   display: flex;
   flex-direction: column;
 }
+.rating_select {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
