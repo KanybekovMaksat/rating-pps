@@ -124,7 +124,7 @@
 
 @media (max-width: 768px) {
   .nav__list{
-    width: 150px;
+    width: 120px;
   }
 
   .nav__list>li:nth-child(2),
