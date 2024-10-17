@@ -297,3 +297,40 @@
 .sorter {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .Edu__logo-name {
+    display: flex;
+    justify-content: start;
+    gap: 50px;
+    padding: 16px 16px;
+  }
+
+  .Kite__logo {
+    background: none;
+    width: 0;
+    height: 0;
+  }
+  .Kite__name {
+    width: 44%;
+    color: #282744;
+  }
+  .MUIT__logo {
+    background: none;
+    width: 0;
+    height: 0;
+  }
+  .MUIT__name {
+    width: 40%;
+    color: #2D4478;
+  }
+  .Komteh__logo {
+    background: none;
+    width: 0;
+    height: 0;
+  }
+  .Komteh__name {
+    width: 45%;
+    color: #00453D;
+  }
+}
