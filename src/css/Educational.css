@@ -334,3 +334,24 @@
     color: #00453D;
   }
 }
+
+@media (max-width: 548px) {
+  .auth__contain {
+    margin: 0 auto;
+    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .auth__input {
+    padding: 5px 10px 5px 10px;
+    width: 340px;
+    height: 50px;
+    border: none;
+    box-shadow: 2px 2px 30px -7.5px rgba(0,0,0,0.25);
+    font-size: 16px;
+    color: #2D4478;
+    margin-top: 15px;
+  }
+}

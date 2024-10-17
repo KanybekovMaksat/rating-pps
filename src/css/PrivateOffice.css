@@ -170,3 +170,19 @@
   font-size: small;
   background-image: url(../img/RectangleStart.png);
 }
+
+@media (max-width: 720px) {
+  .header__menu-s {
+    margin: 10px auto 30px auto;
+    width: 600px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 570px) {
+    .header__menu-s {
+      width: 300px;
+    }
+  }
+}
+
