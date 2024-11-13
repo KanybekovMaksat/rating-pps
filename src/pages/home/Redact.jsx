@@ -154,7 +154,6 @@ const Redact = () => {
           </div>
           <div className="auth__btn-center jc-sb">
             <button className="bnt__log" onClick={handleSaveLink}>Сохранить</button>
-            <div className="btn__Back"><button onClick={Back} className="Back__link" >Назад</button></div>
             <BackButton />
           </div>
         </div>

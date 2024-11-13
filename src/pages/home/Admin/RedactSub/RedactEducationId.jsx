@@ -5,21 +5,29 @@ import { useParams } from "react-router-dom";
 
 function RedactEducationId() {
   const { id } = useParams();
-  const [titles, setTitles] = useState([]);
+  const token = localStorage.getItem("token");
+  const [name, setName] = useState("");
+  const [stage, setStage] = useState("");
+  const [link, setLink] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`https://api.pps.makalabox.com/api/user/account/award/get/${id}`);
-        const data = resp.data.titles;
-        setTitles(data);
+        const resp = await axios.get(`https://rating.makalabox.com/api/admin/stage/edit/award/subtitle/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setName(resp.data.name);
+        setStage(resp.data.stage);
+        setLink(resp.data.link);
       } catch (error) {
-        console.log(error);
+        console.log("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [id, token]);
 
   return (
     <div className="сontents">
@@ -30,9 +38,9 @@ function RedactEducationId() {
         <div>
           <h2>Details for Title ID: {id}</h2>
           <ul>
-            {titles.map((title, index) => (
-              <li key={index}>{title.name}</li>
-            ))}
+            <li className="Edu__text-S">{name}</li>
+            <li className="Edu__text-S">Stage: {stage}</li>
+            <li className="Edu__text-S">Ссылка: {link}</li>
           </ul>
         </div>
       </div>
