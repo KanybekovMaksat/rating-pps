@@ -16,7 +16,7 @@ function RedactEducation() {
             Authorization: `Bearer ${token}`
           }
         });
-        const data = resp.data.titles;
+        const data = resp.data.titles;        
         setTitles(data);
       } catch (error) {
         console.log(error);

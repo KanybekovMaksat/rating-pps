@@ -6,21 +6,17 @@ import { useParams } from "react-router-dom";
 function RedactEducationId() {
   const { id } = useParams();
   const token = localStorage.getItem("token");
-  const [name, setName] = useState("");
-  const [stage, setStage] = useState("");
-  const [link, setLink] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resp = await axios.get(`https://rating.makalabox.com/api/admin/stage/edit/award/subtitle/${id}`, {
+        const resp = await axios.get(`https://rating.makalabox.com/api/admin/stage/edit/innovative/subtitle/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        setName(resp.data.name);
-        setStage(resp.data.stage);
-        setLink(resp.data.link);
+        const data = resp.data;
+        console.log(data);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -36,12 +32,12 @@ function RedactEducationId() {
           <NavBar />
         </div>
         <div>
-          <h2>Details for Title ID: {id}</h2>
+          {/* <h2>Details for Title ID: {id}</h2>
           <ul>
             <li className="Edu__text-S">{name}</li>
             <li className="Edu__text-S">Stage: {stage}</li>
             <li className="Edu__text-S">Ссылка: {link}</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>
