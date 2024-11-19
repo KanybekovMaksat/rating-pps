@@ -15,8 +15,8 @@ function RedactEducationId() {
             Authorization: `Bearer ${token}`,
           },
         });
-        const data = resp.data;
-        console.log(data);
+        const datas = resp.data;
+        console.log(datas);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
