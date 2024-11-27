@@ -51,8 +51,11 @@
 }
 .jc-sb {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: space-evenly;
+  width: 89%;
+  position: fixed;
+  bottom: 5px;
+  background-color: white;
 }
 a.bnt__log.Link {
   text-decoration: none;
