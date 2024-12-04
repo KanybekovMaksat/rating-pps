@@ -13,7 +13,7 @@ function Admin() {
           <Link to='/admin_list' className="admin__link">Список препподователей</Link>
           <Link to='https://api.pps.makalabox.com/admin/stage/personal_awards/' className="admin__link">Redact Stage</Link>
           <Link to='/Registration' className="admin__link">Регистрация</Link>
-          <Link to='/' className="admin__link">Просто кнопка</Link>
+          <Link to='/' className="admin__link">Результаты года</Link>
         </div>
       </div>
     </div>
