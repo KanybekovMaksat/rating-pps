@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useCallback, useEffect, useState, useRef } from 'react';
 import AccountConf from '../../components/AccountConf';
 import NavBar from '../../components/NavBar';
-import RegNav from '../../components/AwardsNav';
+import RegNav from '../../components/RegNav';
 import { useNavigate } from 'react-router-dom';
 
 const Education = () => {

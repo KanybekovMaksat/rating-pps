@@ -1,6 +1,6 @@
 import { useCallback, useState, useEffect } from "react";
 import NavBar from "../../components/NavBar";
-import AwardsNav from "../../components/AwardsNav";
+import RegNav from "../../components/RegNav";
 import AccountConf from "../../components/AccountConf";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -120,7 +120,7 @@ function PrivateOffice() {
       <div className="private-office__main">
         <AccountConf />
         <div className="office">
-          <AwardsNav />
+          <RegNav />
           <h3 className="Edu__text-M Edu__text-M-office">Личные данные</h3>
           <div className="office__in">
             {isAuthenticated && userData ? (

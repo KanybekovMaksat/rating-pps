@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../../components/NavBar";
-import RegNav from "../../components/AwardsNav"
+import RegNav from "../../components/RegNav"
 import { useNavigate } from "react-router-dom";
 import AccountConf from "../../components/AccountConf";
 
