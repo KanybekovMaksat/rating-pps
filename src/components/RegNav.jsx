@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const RegNav = () => {
   return (
     <>
       <div className="header__menu-s">
@@ -14,4 +14,4 @@ const NavBar = () => {
   );
 }
 
-export default NavBar;
+export default RegNav;
