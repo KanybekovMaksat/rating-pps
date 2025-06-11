@@ -63,6 +63,7 @@ function App() {
     if (role === 'admin') {
       return (
         <Route element={<PrivateRouteAdmin />}>
+          <Route path='/Questionnaire' element={<Questionnaire />} />
           <Route path='/private_office' element={<PrivateOffice />} />
           <Route path='/Progress' element={<Progress />} />
           <Route path='/Ural' element={<Research />} />
@@ -100,7 +101,6 @@ function App() {
         <Route path='/LPPS' element={<LPPS />} />
         <Route path='/Authorization' element={<Authorization />} />
         <Route path='/Registration' element={<Registration />} />
-        <Route path='/Questionnaire' element={<Questionnaire />} />
         <Route path='/user/:id' element={<UserInfo />} />
         <Route path='/MUIT' element={<Muit />} />
         <Route path='/MUIT/rating_pps' element={<Rating_ppsm />} />
