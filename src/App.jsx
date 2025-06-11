@@ -8,7 +8,7 @@ import PageNotFound from './pages/PageNotFound';
 import Home from './pages/Home';
 import LPPS from './pages/home/LPPS';
 import Authorization from './pages/home/Authorization';
-import Registration from './pages/home/Registration';
+// import Registration from './pages/home/Registration';
 import Questionnaire from './pages/home/Questionnaire';
 import PrivateOffice from './pages/home/PrivateOffice';
 import Muit from './pages/MUIT';
@@ -99,7 +99,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/LPPS' element={<LPPS />} />
         <Route path='/Authorization' element={<Authorization />} />
-        <Route path='/Registration' element={<Registration />} />
+        {/* <Route path='/Registration' element={<Registration />} /> */}
         <Route path='/Questionnaire' element={<Questionnaire />} />
         <Route path='/user/:id' element={<UserInfo />} />
         <Route path='/MUIT' element={<Muit />} />
